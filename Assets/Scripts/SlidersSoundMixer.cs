@@ -9,7 +9,6 @@ public class SlidersSoundMixer : MonoBehaviour
 
     [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private Slider _slider;
-    [SerializeField] private MuteToggle _muteToggle;
     [SerializeField] private string _exposedParameters;
 
     private float _currentValue;
@@ -26,16 +25,12 @@ public class SlidersSoundMixer : MonoBehaviour
 
     private void SetVolume(float volume)
     {
-        _currentValue = Mathf.Log10(volume) * _volumeConverterValue;
-
         if (volume <= 0)
             _currentValue = _minVolumeValue;
-
-        PlayerPrefs.SetFloat(_exposedParameters, _currentValue);
-
-        if (_muteToggle.IsMuted == false)
-            _audioMixer.SetFloat(_exposedParameters, _currentValue);
         else
-            return;
+            _currentValue = Mathf.Log10(volume) * _volumeConverterValue;
+
+        _audioMixer.SetFloat(_exposedParameters, _currentValue);
+        PlayerPrefs.SetFloat(_exposedParameters, _currentValue);
     }
 }
