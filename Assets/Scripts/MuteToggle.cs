@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -8,6 +9,11 @@ public class MuteToggle : MonoBehaviour
 
     [SerializeField] private Toggle _toggle;
     [SerializeField] private AudioMixer _mixer;
+    [SerializeField] private List<string> _exposedParameters;
+
+    private float _currentVolume;
+
+    public bool IsMuted { get; private set; }
 
     private void OnEnable()
     {
@@ -21,9 +27,22 @@ public class MuteToggle : MonoBehaviour
 
     private void MuteSound(bool enabled)
     {
-        if (enabled)
-            _mixer.SetFloat("Master", _muteValue);
-        else
-            _mixer.SetFloat("Master", 0);
+        foreach (var parameter in _exposedParameters)
+        {
+            _currentVolume = PlayerPrefs.GetFloat(parameter);
+
+            if (enabled)
+            {
+                _mixer.SetFloat(parameter, _muteValue);
+
+                IsMuted = true;
+            }
+            else
+            {
+                _mixer.SetFloat(parameter, _currentVolume);
+
+                IsMuted = false;
+            }
+        }
     }
 }

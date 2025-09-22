@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1500689491}
   m_HandleRect: {fileID: 533763498}
   m_Direction: 0
-  m_MinValue: 0.0001
+  m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -1423,6 +1423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: 435fda6ddf0c89243b3bfc39d89ff991, type: 2}
   _slider: {fileID: 733727239}
+  _muteToggle: {fileID: 1491902529}
   _exposedParameters: Buttons
 --- !u!1 &767939968
 GameObject:
@@ -2999,6 +3000,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggle: {fileID: 1491902528}
   _mixer: {fileID: 24100000, guid: 435fda6ddf0c89243b3bfc39d89ff991, type: 2}
+  _exposedParameters:
+  - Background
+  - Buttons
+  - Master
 --- !u!1 &1500689490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,7 +3934,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1208722255}
   m_HandleRect: {fileID: 1796612639}
   m_Direction: 0
-  m_MinValue: 0.0001
+  m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -3950,6 +3955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: 435fda6ddf0c89243b3bfc39d89ff991, type: 2}
   _slider: {fileID: 1836565158}
+  _muteToggle: {fileID: 1491902529}
   _exposedParameters: Background
 --- !u!1 &1972938931
 GameObject:
@@ -4036,7 +4042,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1010681454}
   m_HandleRect: {fileID: 1409454311}
   m_Direction: 0
-  m_MinValue: 0.0001
+  m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -4057,6 +4063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: 435fda6ddf0c89243b3bfc39d89ff991, type: 2}
   _slider: {fileID: 1972938933}
+  _muteToggle: {fileID: 1491902529}
   _exposedParameters: Master
 --- !u!1 &2051647673
 GameObject:
