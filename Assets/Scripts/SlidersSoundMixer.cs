@@ -31,6 +31,7 @@ public class SlidersSoundMixer : MonoBehaviour
             _currentValue = Mathf.Log10(volume) * _volumeConverterValue;
 
         _audioMixer.SetFloat(_exposedParameters, _currentValue);
-        PlayerPrefs.SetFloat(_exposedParameters, _currentValue);
+
+        //PlayerPrefs.SetFloat(_exposedParameters, _currentValue); - mozhno ispolzovatj dlja sohranenija pozicij slajderov i drugih parametrov
     }
 }

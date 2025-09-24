@@ -7,8 +7,6 @@ public class MuteToggle : MonoBehaviour
     private readonly int _audioListenerMaxVolume = 1;
 
     [SerializeField] private Toggle _toggle;
-    [SerializeField] private AudioListener _listener;
-
 
     private void OnEnable()
     {
@@ -26,5 +24,7 @@ public class MuteToggle : MonoBehaviour
             AudioListener.volume = _audioListenerMinVolume;
         else
             AudioListener.volume = _audioListenerMaxVolume;
+
+        //Mozhno takze cherez  AudioListener.pause.
     }
 }
